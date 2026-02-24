@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+      background-color: #f2f2f2;
+    }
+    input {
+      padding: 10px;
+      width: 150px;
+      margin: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      cursor: pointer;
+    }
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .container {
+      background-color: #fff;
+      display: inline-block;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Simple Calculator</h2>
+    <input type="number" id="num1" placeholder="Enter first number">
+    <input type="number" id="num2" placeholder="Enter second number"><br>
+    <button onclick="calculate()">Calculate</button>
+
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    function calculate() {
+      
+      let num1 = parseFloat(document.getElementById("num1").value);
+      let num2 = parseFloat(document.getElementById("num2").value);
+
+     
+      if (isNaN(num1) || isNaN(num2)) {
+        document.getElementById("result").innerHTML = "Please enter valid numbers!";
+        return;
+      }
+
+      
+      let addition = num1 + num2;
+      let subtraction = num1 - num2;
+      let multiplication = num1 * num2;
+      let division = num2 !== 0 ? (num1 / num2) : "Cannot divide by zero";
+
+      
+      document.getElementById("result").innerHTML = `
+        Addition: ${addition} <br>
+        Subtraction: ${subtraction} <br>
+        Multiplication: ${multiplication} <br>
+        Division: ${division}
+      `;
+    }
+  </script>
+
+</body>
+</html>
