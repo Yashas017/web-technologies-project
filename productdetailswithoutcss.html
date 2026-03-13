@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Details - TechStore</title>
+</head>
+<body>
+
+<header>
+    <h1>TechStore</h1>
+    <nav>
+        <a href="homewithoutcss.html">Home</a> |
+        <a href="productwithoutcss.html">Products</a> |
+        <a href="cartwithoutcss.html">Cart</a> |
+        <a href="contactwithoutcss.html">Contact</a>
+    </nav>
+</header>
+
+<hr>
+
+<a href="productwithoutcss.html">⬅ Back to Products</a>
+
+<br><br>
+
+<div>
+    <img id="productImage" width="300"><br><br>
+
+    <h2 id="productName"></h2>
+    <h3 id="productPrice"></h3>
+
+    <p id="productDescription"></p>
+
+    <button onclick="addToCart()">Add to Cart</button>
+</div>
+
+<script src="products-datawithoutcss.js"></script>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const id = parseInt(params.get("id"));
+const product = products.find(p => p.id === id);
+
+if (product) {
+    document.getElementById("productName").textContent = product.name;
+    document.getElementById("productPrice").textContent = "₹" + product.price;
+    document.getElementById("productImage").src = product.image;
+    document.getElementById("productDescription").textContent = product.description;
+} else {
+    document.body.innerHTML += "<h2>Product Not Found</h2>";
+}
+
+function addToCart() {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart.push(product);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    alert("Added to cart!");
+}
+</script>
+
+</body>
+</html>

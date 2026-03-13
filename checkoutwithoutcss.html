@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Checkout - TechStore</title>
+    
+</head>
+<body>
+
+<header>
+    <h1>TechStore</h1>
+    <nav>
+        <a href="homewithoutcss.html">Home</a> |
+        <a href="productwithoutcss.html">Products</a> |
+        <a href="cartwithoutcss.html">Cart</a> |
+        <a href="contactwithoutcss.html">Contact</a>
+    </nav>
+</header>
+
+<h1>Checkout</h1>
+
+<div>
+    <h3>Order Summary</h3>
+    <div id="cartSummary"></div>
+    <h3 id="totalPrice"></h3>
+</div>
+
+<h3>Delivery Information</h3>
+<label for="name">Full Name</label><br>
+<input type="text" id="name" placeholder="" required><br><br>
+
+<label for="address">Address</label><br>
+<textarea id="address" placeholder="Street, City, State, ZIP" rows="3" required></textarea><br><br>
+
+<label for="contact">Contact Number</label><br>
+<input type="text" id="contact" placeholder="" required><br><br>
+
+<button onclick="confirmOrder()">Confirm Order</button>
+
+<script src="products-datawithoutcss.js"></script>
+<script>
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+const cartSummary = document.getElementById("cartSummary");
+const totalPriceEl = document.getElementById("totalPrice");
+let total = 0;
+
+
+function displaySummary() {
+    if(cart.length === 0) {
+        cartSummary.innerHTML = "<p>Your cart is empty.</p>";
+        totalPriceEl.textContent = "";
+        return;
+    }
+
+    cartSummary.innerHTML = "";
+    total = 0;
+
+    cart.forEach(item => {
+        total += item.price;
+        cartSummary.innerHTML += item.name + " - ₹" + item.price + "<br>";
+    });
+
+    totalPriceEl.textContent = "Total: ₹" + total;
+}
+
+
+function confirmOrder() {
+    const name = document.getElementById("name").value.trim();
+    const address = document.getElementById("address").value.trim();
+    const contact = document.getElementById("contact").value.trim();
+
+    if(!name || !address || !contact) {
+        alert("Please fill all delivery details.");
+        return;
+    }
+
+    localStorage.removeItem("cart");
+    cart = [];
+    displaySummary();
+
+    alert("Thank you " + name + "! Your order has been placed.\nWe will deliver to: " + address + "\nContact: " + contact);
+
+    window.location.href = "home.html";
+}
+
+displaySummary();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Products - TechStore</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>TechStore</h1>
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="cart.html">Cart</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<h2 style="text-align:center;">Our Products</h2>
+<div class="products-grid"></div>
+
+<script src="products-data.js"></script>
+<script>
+const container = document.querySelector(".products-grid");
+
+products.forEach(product => {
+    container.innerHTML += `
+        <div class="product">
+            <a href="product-details.html?id=${product.id}">
+                <img src="${product.image}">
+                <h3>${product.name}</h3>
+                <p>₹${product.price}</p>
+            </a>
+        </div>
+    `;
+});
+</script>
+
+</body>
+</html>

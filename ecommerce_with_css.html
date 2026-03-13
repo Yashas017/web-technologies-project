@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>E-Commerce With CSS</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .product {
+            background-color: white;
+            padding: 15px;
+            width: 200px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+
+        .product img {
+            width: 100%;
+        }
+
+        button {
+            background-color: green;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: darkgreen;
+        }
+    </style>
+
+</head>
+<body>
+
+    <h1>E-Commerce Website (With CSS)</h1>
+
+    <div class="container">
+
+        <div class="product">
+            <h3>Shoes</h3>
+            <img src="https://via.placeholder.com/150" alt="Shoes">
+            <p>$50</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <h3>Watch</h3>
+            <img src="https://via.placeholder.com/150" alt="Watch">
+            <p>$80</p>
+            <button>Add to Cart</button>
+        </div>
+
+    </div>
+
+    <br><br>
+    <center>
+        <a href="index.html">Back to Home</a>
+    </center>
+
+</body>
+</html>

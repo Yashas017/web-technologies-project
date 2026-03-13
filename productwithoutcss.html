@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Products - TechStore</title>
+</head>
+<body>
+
+<header>
+    <h1>TechStore</h1>
+    <nav>
+        <a href="homewithoutcss.html">Home</a>
+        <a href="productwithoutcss.html">Products</a>
+        <a href="cartwithoutcss.html">Cart</a>
+        <a href="contactwithoutcss.html">Contact</a>
+    </nav>
+</header>
+
+<h2 style="text-align:center;">Our Products</h2>
+
+<table align="center" id="productTable"></table>
+
+<script src="products-datawithoutcss.js"></script>
+
+<script>
+const table = document.getElementById("productTable");
+let row;
+
+products.forEach((product, index) => {
+
+    if (index % 4 === 0) {  
+        row = document.createElement("tr");
+        table.appendChild(row);
+    }
+
+    row.innerHTML += `
+        <td align="center" style="padding:20px;">
+            <a href="productdetailswithoutcss.html?id=${product.id}">
+                <img src="${product.image}" width="180"><br>
+                <h3>${product.name}</h3>
+                <p>₹${product.price}</p>
+            </a>
+        </td>
+    `;
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cart - TechStore</title>
+    
+</head>
+<body>
+
+<header>
+    <h1>TechStore</h1>
+    <nav>
+        <a href="homewithoutcss.html">Home</a>
+        <a href="productwithoutcss.html">Products</a>
+        <a href="cartwithoutcss.html">Cart</a>
+        <a href="contactwithoutcss.html">Contact</a>
+    </nav>
+</header>
+
+<h1>Your Cart</h1>
+
+<div id="cartItems"></div>
+<h3 id="total"></h3>
+
+
+<a href="checkoutwithoutcss.html" class="checkout-btn">Proceed to Delivery / Checkout</a>
+
+<script>
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+const container = document.getElementById("cartItems");
+let total = 0;
+
+
+function displayCart() {
+    container.innerHTML = "";
+    total = 0;
+
+    if(cart.length === 0) {
+        container.innerHTML = "<p style='text-align:center;'>Your cart is empty.</p>";
+        document.getElementById("total").textContent = "";
+        return;
+    }
+
+    cart.forEach((item, index) => {
+        total += item.price;
+        container.innerHTML += `
+            <div class="cart-item">
+                <h3>${item.name}</h3>
+                <p>₹${item.price}</p>
+                <button onclick="removeItem(${index})">Remove</button>
+            </div>
+        `;
+    });
+
+    document.getElementById("total").textContent = "Total: $" + total;
+}
+
+
+function removeItem(index) {
+    cart.splice(index, 1);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    displayCart();
+}
+
+
+displayCart();
+</script>
+
+</body>
+</html>
