@@ -20,12 +20,16 @@ header h1 {
 
 header nav {
     margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 header nav a {
     color: white;
     text-decoration: none;
-    margin: 0 15px;
+    margin: 0 px;
     font-weight: bold;
     font-size: 16px;
 }
