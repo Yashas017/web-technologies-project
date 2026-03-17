@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Form App</title>
+    <link rel="stylesheet" href="style1.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<div class="container">
+    <h2>Student Form</h2>
+
+    <form id="dataForm" class="form-card">
+        <input type="text" id="name" placeholder="Enter Name" required>
+        <input type="number" id="age" placeholder="Enter Age" required>
+        <input type="email" id="email" placeholder="Enter Email" required>
+        <button type="submit">Add Data</button>
+    </form>
+
+    <div class="buttons">
+        <button onclick="openNewPage()">View Table</button>
+        <button onclick="copyData()">Copy Data</button>
+        <button onclick="downloadCSV()">Download CSV</button>
+    </div>
+</div>
+
+<div id="popup" class="popup">✅ Data Added Successfully!</div>
+
+<script src="script1.js"></script>
+</body>
+</html>
