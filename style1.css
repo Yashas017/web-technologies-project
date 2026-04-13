@@ -6,30 +6,27 @@
 
 body {
     font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #5a6670, #69888a);
+    background: linear-gradient(135deg, #2d5a27, #4a8c3f);
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-
 .container {
-    background: white;
+    background: #ffffff;
     padding: 30px;
     border-radius: 15px;
     width: 90%;
     max-width: 400px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
     text-align: center;
 }
 
-
 h2 {
     margin-bottom: 20px;
-    color: #333;
+    color: #1a3d15;
 }
-
 
 .form-card {
     display: flex;
@@ -40,33 +37,33 @@ h2 {
 input {
     padding: 12px;
     border-radius: 8px;
-    border: 1px solid #ccc;
+    border: 1px solid #97c459;
     outline: none;
+    background: #eaf3de;
+    color: #1a3d15;
     transition: 0.3s;
 }
 
 input:focus {
-    border-color: #4facfe;
-    box-shadow: 0 0 5px rgba(79,172,254,0.5);
+    border-color: #3b6d11;
+    box-shadow: 0 0 0 3px rgba(99, 153, 34, 0.2);
 }
-
 
 button {
     padding: 12px;
     border: none;
     border-radius: 8px;
-    background: #4facfe;
-    color: white;
+    background: #3b6d11;
+    color: #eaf3de;
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
 }
 
 button:hover {
-    background: #007bff;
+    background: #27500a;
     transform: scale(1.05);
 }
-
 
 .buttons {
     margin-top: 15px;
@@ -75,13 +72,12 @@ button:hover {
     gap: 10px;
 }
 
-
 .popup {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background: #28a745;
-    color: white;
+    background: #3b6d11;
+    color: #eaf3de;
     padding: 15px 20px;
     border-radius: 10px;
     opacity: 0;
@@ -93,7 +89,6 @@ button:hover {
     opacity: 1;
     transform: translateY(0);
 }
-
 
 @media (max-width: 500px) {
     .container {
