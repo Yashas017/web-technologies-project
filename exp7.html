@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 7</title>
+    <link rel="stylesheet" href="lab-style.css">
+</head>
+<body>
+    <header class="lab-header">
+        <div class="wrap nav-row">
+            <div>
+                <p class="eyebrow">Experiment 7</p>
+                <h1>JavaScript Product Manager</h1>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="exp8.php">Exp 8</a>
+                <a href="exp9.php">Exp 9</a>
+                <a href="exp10.php">Exp 10</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="wrap section-space">
+        <section class="hero-layout">
+            <div class="panel">
+                <p class="eyebrow">Interactive DOM Work</p>
+                <h2 class="page-title">Filter, sort, search and export products live.</h2>
+                <p class="lead">This page demonstrates JavaScript event handling, array operations, dynamic DOM rendering, and CSV download in a polished interface.</p>
+            </div>
+            <div class="feature-panel">
+                <h3>Features used</h3>
+                <ul>
+                    <li>Search by name</li>
+                    <li>Category filter</li>
+                    <li>Price and rating sort</li>
+                    <li>Live totals and CSV export</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="control-shell" data-exp7>
+            <div class="toolbar-grid">
+                <label>Search product
+                    <input type="search" id="searchInput" placeholder="Search calculator, book, keyboard">
+                </label>
+                <label>Category
+                    <select id="categoryInput">
+                        <option value="All">All</option>
+                        <option value="Books">Books</option>
+                        <option value="Electronics">Electronics</option>
+                        <option value="Accessories">Accessories</option>
+                        <option value="Stationery">Stationery</option>
+                    </select>
+                </label>
+                <label>Sort by
+                    <select id="sortInput">
+                        <option value="default">Default</option>
+                        <option value="price-low">Price Low to High</option>
+                        <option value="price-high">Price High to Low</option>
+                        <option value="rating-high">Rating High to Low</option>
+                    </select>
+                </label>
+                <button type="button" class="secondary" id="resetBtn">Reset</button>
+                <button type="button" id="downloadBtn">Download CSV</button>
+            </div>
+
+            <div class="stats-grid">
+                <article class="stat-box"><span>Total items</span><strong id="totalItems">0</strong></article>
+                <article class="stat-box"><span>Total stock</span><strong id="totalStock">0</strong></article>
+                <article class="stat-box"><span>Inventory value</span><strong id="inventoryValue">Rs. 0</strong></article>
+                <article class="stat-box"><span>Top rated</span><strong id="topRated">-</strong></article>
+            </div>
+
+            <div class="summary-box" id="summaryText">Showing all products.</div>
+            <div class="product-grid" id="productGrid"></div>
+        </section>
+    </main>
+
+    <script src="exp7.js"></script>
+</body>
+</html>
